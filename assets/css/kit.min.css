@@ -30,3 +30,6 @@ textarea#input, textarea#output  {
     background: #b1adad;
     font-size: 20px;
 }
+div#buttons {
+    text-align: center;
+}
