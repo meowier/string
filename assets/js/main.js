@@ -271,19 +271,19 @@ var splitStr = () => {
 }
 
 var md5hash = () => {
-	returnFunc(md5(document.getElementById('input').value));
+	returnFunc(CryptoJS.MD5(document.getElementById('input').value));
 }
 
 var sha1hash = () => {
-	returnFunc(sha1(document.getElementById('input').value));
+	returnFunc(CryptoJS.SHA1(document.getElementById('input').value));
 }
 
 var sha256hash = () => {
-	returnFunc(sha256(document.getElementById('input').value));
+	returnFunc(CryptoJS.SHA256(document.getElementById('input').value));
 }
 
 var sha512hash = () => {
-	returnFunc(sha512(document.getElementById('input').value));
+	returnFunc(CryptoJS.SHA512(document.getElementById('input').value));
 }
 
 var md2hash = () => {
@@ -295,11 +295,55 @@ var md4hash = () => {
 }
 
 var aesEn = () => {
-	let key = prompt('Nhập Secret Key:');
+	let key = prompt('Secret Passphrase:');
 	returnFunc(CryptoJS.AES.encrypt(document.getElementById('input').value, key).toString());
 }
 
 var aesDe = () => {
-	let key = prompt('Nhập Secret Key:');
+	let key = prompt('Secret Passphrase:');
 	returnFunc(CryptoJS.AES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
+}
+
+var rip160 = () => {
+	returnFunc(CryptoJS.RIPEMD160(document.getElementById('input').value).toString());
+}
+
+var md5hmac = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.HmacMD5(document.getElementById('input').value, key).toString());
+}
+
+var sha1hmac = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.HmacSHA1(document.getElementById('input').value, key).toString());
+}
+
+var sha256hmac = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.HmacSHA256(document.getElementById('input').value, key).toString());
+}
+
+var sha512hmac = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.HmacSHA512(document.getElementById('input').value, key).toString());
+}
+
+var desEn = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.DES.encrypt(document.getElementById('input').value, key).toString());
+}
+
+var desDe = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.DES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
+}
+
+var tripDesEn = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.TripleDES.encrypt(document.getElementById('input').value, key).toString());
+}
+
+var tripDesDe = () => {
+	let key = prompt('Secret Passphrase:');
+	returnFunc(CryptoJS.TripleDES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
 }
