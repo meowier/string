@@ -266,7 +266,7 @@ var splitStr = () => {
 	let re = s === '' ? ' ' : s;
 	let pattern = new RegExp(`[a-zA-Z0-9:\/!@#$%^&*()?'"_.,<>\\[\\]\\-=+]{${k}}`, 'gm');
 	let out = e.match(pattern);
-	returnFunc(out.join(re) + e.slice(out.join('').length, e.length));
+	returnFunc(out.join(re) + re + e.slice(out.join('').length, e.length));
 }
 
 var md5hash = () => {
