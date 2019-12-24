@@ -271,79 +271,96 @@ var splitStr = () => {
 }
 
 var md5hash = () => {
-	returnFunc(CryptoJS.MD5(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.MD5(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var sha1hash = () => {
-	returnFunc(CryptoJS.SHA1(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.SHA1(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var sha256hash = () => {
-	returnFunc(CryptoJS.SHA256(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.SHA256(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var sha512hash = () => {
-	returnFunc(CryptoJS.SHA512(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.SHA512(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var md2hash = () => {
-	returnFunc(md2(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : md2(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var md4hash = () => {
-	returnFunc(md4(document.getElementById('input').value));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : md4(document.getElementById('input').value);
+	returnFunc(out);
 }
 
 var aesEn = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.AES.encrypt(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.AES.encrypt(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var aesDe = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.AES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.AES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8);
+	returnFunc(out);
 }
 
 var rip160 = () => {
-	returnFunc(CryptoJS.RIPEMD160(document.getElementById('input').value).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.RIPEMD160(document.getElementById('input').value).toString();
+	returnFunc(out);
 }
 
 var md5hmac = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.HmacMD5(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.HmacMD5(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var sha1hmac = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.HmacSHA1(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.HmacSHA1(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var sha256hmac = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.HmacSHA256(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.HmacSHA256(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var sha512hmac = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.HmacSHA512(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.HmacSHA512(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var desEn = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.DES.encrypt(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.DES.encrypt(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var desDe = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.DES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.DES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8);
+	returnFunc(out);
 }
 
 var tripDesEn = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.TripleDES.encrypt(document.getElementById('input').value, key).toString());
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.TripleDES.encrypt(document.getElementById('input').value, key).toString();
+	returnFunc(out);
 }
 
 var tripDesDe = () => {
 	let key = prompt('Secret Passphrase:');
-	returnFunc(CryptoJS.TripleDES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8));
+	let out = document.getElementById('input').value === '' ? 'Invalid Input' : CryptoJS.TripleDES.decrypt(document.getElementById('input').value, key).toString(CryptoJS.enc.Utf8);
+	returnFunc(out);
 }
