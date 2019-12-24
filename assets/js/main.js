@@ -249,7 +249,7 @@ var reAcce = () => {
 }
 var remRep = () => {
 	let e = document.getElementById('input').value;
-	let find = prompt('Nhập kí tự bạn muốn xoá:');
+	let find = prompt('Nhập kí tự bạn muốn tìm:');
 	let rep = prompt('Nhập kí tự muốn thay thế, nếu muốn xoá thì bỏ trống:');
 	if (rep == "\\n") {
 		rep = "\n";
@@ -261,13 +261,12 @@ var remRep = () => {
 }
 var splitStr = () => {
 	let e = document.getElementById('input').value;
-	let k = parseInt(prompt('Nhập khoảng cách muốn chia:'));
+	let k = prompt('Nhập khoảng cách muốn chia:');
 	let s = prompt('Nhập kí tự ngăn cách: (mặc định bỏ trống là dấu cách)').toString();
-	let out = '';
-	for (let i = 0; i < e.length; i+= k){
-		out += e.split('').slice(i, i + k);
-	}
-	returnFunc(out.replace(/,/g, ' '));
+	let re = s === '' ? ' ' : s;
+	let pattern = new RegExp(`[a-zA-Z0-9:\/!@#$%^&*()?'"_.,<>\\[\\]\\-=+]{${k}}`, 'gm');
+	let out = e.match(pattern);
+	returnFunc(out.join(re) + e.slice(out.join('').length, e.length));
 }
 
 var md5hash = () => {
