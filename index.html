@@ -3,115 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="https://graph.facebook.com/100041210613975/picture?width=50&height=50">
-    <link href="assets/css/kit.min.css" rel="stylesheet" />
-    <title>String Tools | Meowier JX</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155010028-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-155010028-1');
-    </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js">
+    <link rel="stylesheet" href="style.css">
+    <title>String Tools</title>
 </head>
-<body class="index-page sidebar-collapse">
-    <nav class="navbar navbar-expand-lg bg-rose">
-        <div class="container">
-          <div class="navbar-translate">
-            <a class="navbar-brand" href=""><strong>String Tools Meowier</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="navbar-toggler-icon"></span>
-              <span class="navbar-toggler-icon"></span>
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse">
-          </div>
+<body>
+    <div class="menu-bar">
+        <ul class="menu">
+            <li><a href="#">Abouts</a></li>
+            <li class="contacts"><a href="#">Contacts</a></li>
+            <li><a href="#">Tools</a></li>
+        </ul>
+    </div>
+    <h2>String Tools by hypnguyen1209</h2>
+    <div class="container">
+        <div class="input-text">
+            <textarea id="input-area" rows="14"></textarea>
         </div>
-      </nav>
-    <!-- ------------ -->  
-    <div class="main main-raised">
-        <div class="section section-basic">
-            <div class="cards">
-                <div class="container">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group label-floating">
-                          <textarea class="form-control" rows="5" id="input" placeholder="Paste your text here"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div id="buttons" class="cd-section">
-                        <div class="title">Popular Encyption</div>
-                        <button class="btn btn-info" onclick="urlEncode()">URL Encode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="urlDecode()">URL Decode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="utf8Encode()">UTF-8 Encode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="utf8Decode()">UTF-8 Decode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="base64Encode()">Base64 Encode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="base64Decode()">Base64 Decode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="htmlEncode()">HTML Encode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="htmlEncode()">HTML Decode<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="rot13()">ROT<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="strToHex()">Strings to Hex<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="hexToStr()">Hex to Strings<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="strToBin()">Strings to Binary<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="binToStr()">Binary to Strings<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="buildStr()">Build String<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="upperCase()">UpperCase<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="lowerCase()">LowerCase<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="revStr()">Reverse Strings<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="reAcce()">Remove Accents<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="strLen()">Strings Length<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="upsideDown()">Upside Down Text<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="remRep()">Remove / Replace<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="minStr()">Minify Strings<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="splitStr()">Split Strings<div class="ripple-container"></div></button>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div id="buttons" class="cd-section">
-                        <div class="title">Popular Hased</div>
-                        <button class="btn btn-info" onclick="md5hash()">MD5<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha1hash()">SHA-1<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha256hash()">SHA-256<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha512hash()">SHA-512<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="md2hash()">MD2<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="md4hash()">MD4<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="aesEn()">AES Encrypt<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="aesDe()">AES Decrypt<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="rip160()">RIPEMD-160<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="md5hmac()">MD5 Hmac<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha1hmac()">SHA-1 Hmac<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha256hmac()">SHA-256 Hmac<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="sha512hmac()">SHA-512 Hmac<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="desEn()">DES Encrypt<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="desDe()">DES Decrypt<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="tripDesEn()">TripleDES Encrypt<div class="ripple-container"></div></button>
-                        <button class="btn btn-info" onclick="tripDesDe()">TripleDES Decrypt<div class="ripple-container"></div></button>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group label-floating">
-                          <textarea readonly="readonly" class="form-control" rows="5" id="output"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
+        <div class="convert-btn">
+            <button onclick="deurl()">Decode URL</button>
+            <button onclick="enurl()">Encode URL</button>
+            <button onclick="debase64()">Decode base64</button>
+            <button onclick="enbase64()">Encode base64</button>
+            <button onclick="debase32()">Decode base32</button>
+            <button onclick="enbase32()">Encode base32</button>
+            <button onclick="dehtml()">Decode HTML</button>
+            <button onclick="enhtml()">Encode HTML</button>
+            <button onclick="rot13()">ROT13</button>
+            <button onclick="revStr()">Reverse Strings</button>
+            <button onclick="upper()">Uppercase</button>
+            <button onclick="lower()">Lowercase</button>
+            <button onclick="lengthStr()">Strings Length</button>
+            <button onclick="splitStr()">Split Strings</button>
+            <button onclick="minStr()">Minify Strings</button>
+            <button onclick="remRep()">Remove/Replace</button>
+            <button onclick="buildStr()">Strings Builder</button>
+        </div>
+        <span>-</span>
+        <div class="convert-btn">
+            <button onclick="strToHex()">String to Hex</button>
+            <button onclick="hexToStr()">Hex to String</button>
+            <button onclick="strToBin()">String to Bin</button>
+            <button onclick="binToStr()">Bin to String</button>
+            <button onclick="strToDec()">String to Dec</button>
+            <button onclick="decToStr()">Dec to String</button>
+            <button onclick="strToMorse()">String to MorseCode</button>
+            <button onclick="mourseToStr()">MorseCode to String</button>
+        </div>
+        <span>-</span>
+        <div class="convert-btn">
+            <button onclick="md5()">MD5</button>
+            <button onclick="sha1()">SHA-1</button>
+            <button onclick="sha256()">SHA-256</button>
+            <button onclick="sha512()">SHA-512</button>
+            <button onclick="md4hash()">MD4</button>
+            <button onclick="md2hash()">MD2</button>
+            <button onclick="ripemd160()">RIPEMD-160</button>
+            <button onclick="sha3512()">SHA-3 512</button>
+            <button onclick="sha3384()">SHA-3 384</button>
+            <button onclick="sha3256()">SHA-3 256</button>
+            <button onclick="sha3224()">SHA-3 224</button>
+           
+        </div>
+        <span>-</span>
+        <div class="convert-btn">
+            <select id="hash">
+                <option value="none" selected>Encrypt type</option>
+                <option value="hmacmd5">Hmac MD5</option>
+                <option value="hmacsha1">Hmac SHA1</option>
+                <option value="hmacsha256">Hmac SHA256</option>
+                <option value="hmacsha512">Hmac SHA512</option>
+                <option value="">Hmac SHA3</option>
+                <option value="">Hmac SHA384</option>
+                <option value="">Hmac SHA224</option>
+                <option value="aes">AES</option>
+                <option value="des">DES</option>
+                <option value="tripledes">Triple DES</option>
+                <option value="rc4">RC4</option>
+                <option value="rc4drop">RC4Drop</option>
+            </select>
+            <input id="phrase" class="input-pass" type="text" placeholder="Phrase/Valid Hash">
+        </div>
+        <div class="convert-btn encrypt">
+            <button id="encrypt">Encrypt</button>
+            <button id="decrypt">Decrypt</button>
+            <button id="checkvalid">Check Valid Hash</button>
+        </div>
+        <div class="output-text">
+            <textarea id="output-area" rows="14"></textarea>
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
-<script src="assets/js/common.js"></script>
-<script src="assets/js/main.js"></script>
-</script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/js-htmlencode/build/htmlencode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/js-md2/build/md2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/js-md4/build/md4.min.js"></script>
+<script src="https://simplycalc.com/base32.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="script.js"></script>
 </html>

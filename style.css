@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+body {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #DDD;
+}
+.menu {
+    display: flex;
+    background-color: slategrey;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu li {
+    padding: 8px 16px;
+}
+
+.menu li:hover {
+    padding: 8px 16px;
+    background-color: cyan;
+    cursor: pointer;
+}
+
+ li:hover a {
+    color: black
+}
+
+.container {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2% 0;
+    
+}
+.container textarea {
+    padding-left: 12px;
+    outline: none;
+    border-radius: 3px;
+    width: 80%;
+    white-space: pre;
+    border: 0;
+}
+.container .input-text {
+    text-align: center;
+    width: 100%;
+}
+.container .output-text {
+    text-align: center;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.convert-btn {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.convert-btn button {
+    border-radius: 3px;
+}
+.convert-btn button:hover {
+    box-shadow: 1px 2px #888;
+    cursor: pointer;
+}
+textarea::selection, input::selection {
+    background-color: rgb(255, 252, 53);
+}
+.input-pass {
+    outline: none;
+    margin-left: 5px;
+    border: 0;
+}
+.encrypt {
+    margin: 5px 0;
+}
+h2 {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
