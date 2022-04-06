@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image2Base64</title>
+</head>
+<style>
+    .textarea,
+    .button {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    textarea {
+        width: 95%;
+        border-radius: 5px;
+        border: 2px rebeccapurple solid;
+    }
+
+    textarea::selection {
+        background-color: rgb(255, 252, 53);
+    }
+
+    button {
+        width: 95%;
+        font-size: 2em;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <h2>Image 2 Base64</h2>
+        <div class="textarea">
+            <textarea v-model="result" id="" cols="30" rows="20"></textarea>
+        </div>
+        <div class="button">
+            <button @click="copy">Copy</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+<script>
+    const App = {
+        data() {
+            return {
+                result: ''
+            }
+        },
+        methods: {
+            copy() {
+                navigator.clipboard.writeText(this.result)
+            }
+        },
+        mounted() {
+            let that = this
+            document.addEventListener('paste', evt => {
+                try {
+                    const { items } = evt.clipboardData;
+                    const item = [].slice.call(items).find(e => e.type.includes('image'))
+                    let fileReader = new FileReader()
+                    fileReader.readAsDataURL(item.getAsFile())
+                    fileReader.addEventListener('load', e => {
+                        that.result = e.target.result
+                    })
+                } catch (err) {
+                    this.result = 'clipboard type not image'
+                }
+
+            })
+        }
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+
+</html>
