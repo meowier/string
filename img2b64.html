@@ -53,30 +53,33 @@
     const App = {
         data() {
             return {
-                result: ''
+                result: '',
+                types: ['image/bmp', 'image/gif', 'image/png', 'image/jpeg', 'image/tiff']
             }
         },
         methods: {
-            copy() {
-                navigator.clipboard.writeText(this.result)
-            }
-        },
-        mounted() {
-            let that = this
-            document.addEventListener('paste', evt => {
+            async copy() {
                 try {
-                    const { items } = evt.clipboardData;
-                    const item = [].slice.call(items).find(e => e.type.includes('image'))
+                    let item = await navigator.clipboard.read()
+                    let data = await this.getType(item[0])
                     let fileReader = new FileReader()
-                    fileReader.readAsDataURL(item.getAsFile())
-                    fileReader.addEventListener('load', e => {
+                    let that = this
+                    fileReader.onload = e => {
                         that.result = e.target.result
-                    })
+                        navigator.clipboard.writeText(e.target.result)
+                    }
+                    fileReader.readAsDataURL(data)
                 } catch (err) {
-                    this.result = 'clipboard type not image'
+                    this.result = 'clipboard type invalid'
                 }
-
-            })
+            },
+            async getType(item) {
+                for (let e of item.types) {
+                    for (let type of this.types) {
+                        if (e == type) return await item.getType(type)
+                    }
+                }
+            }
         }
     }
     Vue.createApp(App).mount('#app')
