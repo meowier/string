@@ -135,10 +135,14 @@ let escapseJs = () => {
 		}).join('')
 	} else {
 		try {
-			out =  `${JSON.stringify(JSON.stringify(JSON.parse(e)))}`
+			if(typeof JSON.parse(e) === 'object') {
+				out = JSON.stringify(e);	
+			} else {
+				out = e	
+			}
 		} catch (err) {
 			out = e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
-		}	
+		}
 	}
     onOutput(out);
 }
