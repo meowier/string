@@ -104,10 +104,30 @@
 <script src="https://simplycalc.com/base32.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
 <script>
+	var el = document.getElementById('input-area');
+    el.onkeydown = function(e) {
+        if (e.keyCode === 9) { // tab was pressed
+
+            // get caret position/selection
+            var val = this.value,
+                start = this.selectionStart,
+                end = this.selectionEnd;
+
+            // set textarea value to: text before caret + tab + text after caret
+            this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+            // put caret at right position again
+            this.selectionStart = this.selectionEnd = start + 1;
+
+            // prevent the focus lose
+            return false;
+
+        }
+    };
     !(() => {
-	let script = document.createElement('script')
-	script.src = "./script.js?" + Date.now()
-	document.body.appendChild(script)
-})()
+		let script = document.createElement('script')
+		script.src = "./script.js?" + Date.now()
+		document.body.appendChild(script)
+	})()
 </script>
 </html>
