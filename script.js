@@ -123,6 +123,22 @@ let enbase32 = ()=> {
     onOutput(base32_encode(document.getElementById('input-area').value));
 }
 
+let escapseJs = () => {
+    let e = document.getElementById('input-area').value;
+    let out = '';
+	try {
+		out =  `"${JSON.stringify(JSON.stringify(JSON.parse(e)))}"`
+	} catch () {
+		out = `"${e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f")}"`;
+	}
+    onOutput(out);
+}
+
+let unescapseJs = () => {
+    let e = document.getElementById('input-area').value;
+    onOutput(out);
+}
+
 let strToHex = ()=> {
 	let e = document.getElementById('input-area').value;
 	let out = e.split('').map((value, index) => {
