@@ -53,6 +53,7 @@ li a {
     width: 80%;
     white-space: pre;
     border: 0;
+    tab-size: 4;
 }
 .container .input-text {
     text-align: center;
