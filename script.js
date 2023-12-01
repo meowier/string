@@ -126,10 +126,19 @@ let enbase32 = ()=> {
 let escapseJs = () => {
     let e = document.getElementById('input-area').value;
     let out = '';
-	try {
-		out =  JSON.stringify(JSON.stringify(JSON.parse(e)))
-	} catch (err) {
-		out = e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
+	if (c[0] == "/" && c[c.length - 1] == "/") {
+		let esc = [".", "\\", "+", "*", "?", "[", "]", "^", "$", "(", ")", "{", "}", "=", "!", "<", ">", "|", ":", "-"]
+		out = c.split('').map((v, i) => {
+			if (i == 0 || i == c.length - 1) return v
+			if (esc.includes(v) && c[i-1] !== "\\") return "\\" + v
+			else return v
+		})
+	} else {
+		try {
+			out =  JSON.stringify(JSON.stringify(JSON.parse(e)))
+		} catch (err) {
+			out = e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
+		}	
 	}
     onOutput(out);
 }
