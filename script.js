@@ -126,11 +126,11 @@ let enbase32 = ()=> {
 let escapseJs = () => {
     let e = document.getElementById('input-area').value;
     let out = '';
-	if (c[0] == "/" && c[c.length - 1] == "/") {
+	if (e[0] == "/" && e[e.length - 1] == "/") {
 		let esc = [".", "\\", "+", "*", "?", "[", "]", "^", "$", "(", ")", "{", "}", "=", "!", "<", ">", "|", ":", "-"]
 		out = c.split('').map((v, i) => {
-			if (i == 0 || i == c.length - 1) return v
-			if (esc.includes(v) && c[i-1] !== "\\") return "\\" + v
+			if (i == 0 || i == e.length - 1) return v
+			if (esc.includes(v) && e[i-1] !== "\\") return "\\" + v
 			else return v
 		})
 	} else {
