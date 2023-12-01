@@ -132,7 +132,7 @@ let escapseJs = () => {
 			if (i == 0 || i == e.length - 1) return v
 			if (esc.includes(v) && e[i-1] !== "\\") return "\\" + v
 			else return v
-		})
+		}).join('')
 	} else {
 		try {
 			out =  JSON.stringify(JSON.stringify(JSON.parse(e)))
