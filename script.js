@@ -149,6 +149,7 @@ let escapseJs = () => {
 
 let unescapseJs = () => {
     let e = document.getElementById('input-area').value;
+	let out = e.replace(/\\n/g, `\n`).replace(/\\'/g, `'`).replace(/\\"/g, `\"`).replace(/\\&/g, `\&`).replace(/\\r/g, `\r`).replace(/\\t/g, `\t`).replace(/\\b/g, `\b`).replace(/\\f/g, `\f`)
     onOutput(out);
 }
 
