@@ -128,7 +128,7 @@ let escapseJs = () => {
     let out = '';
 	if (e[0] == "/" && e[e.length - 1] == "/") {
 		let esc = [".", "\\", "+", "*", "?", "[", "]", "^", "$", "(", ")", "{", "}", "=", "!", "<", ">", "|", ":", "-"]
-		out = c.split('').map((v, i) => {
+		out = e.split('').map((v, i) => {
 			if (i == 0 || i == e.length - 1) return v
 			if (esc.includes(v) && e[i-1] !== "\\") return "\\" + v
 			else return v
