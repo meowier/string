@@ -103,5 +103,11 @@
 <script src="https://cdn.jsdelivr.net/gh/emn178/js-md4/build/md4.min.js"></script>
 <script src="https://simplycalc.com/base32.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-<script src="script.js"></script>
+<script>
+    !(() => {
+	let script = document.createElement('script')
+	script.src = "./script.js?" + Date.now()
+	document.body.appendChild(script)
+})()
+</script>
 </html>
