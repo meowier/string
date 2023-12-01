@@ -127,9 +127,9 @@ let escapseJs = () => {
     let e = document.getElementById('input-area').value;
     let out = '';
 	try {
-		out =  `"${JSON.stringify(JSON.stringify(JSON.parse(e)))}"`
+		out =  JSON.stringify(JSON.stringify(JSON.parse(e)))
 	} catch (e) {
-		out = `"${e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f")}"`;
+		out = e.replace(/\\n/g, "\\n").replace(/\\'/g, "\\'").replace(/\\"/g, '\\"').replace(/\\&/g, "\\&").replace(/\\r/g, "\\r").replace(/\\t/g, "\\t").replace(/\\b/g, "\\b").replace(/\\f/g, "\\f");
 	}
     onOutput(out);
 }
